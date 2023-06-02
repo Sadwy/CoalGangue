@@ -35,8 +35,11 @@ python check.py  # 不报错说明预处理完成
 
 # Train
 ```shell
-python tools/train.py configs/custom/fcn_coal.py
-# RTX 3090 单卡训练需要1h
+# 单卡训练 (2张卡
+python tools/train.py configs/custom/fcn_coal.py  # RTX 3090 单卡训练需要1h
+
+# 多卡训练
+bash tools/dist_train.sh configs/custom/fcn_coal.py 2
 ```
 ## 1. 修改配置
 - configs/custom/fcn_coal.py
